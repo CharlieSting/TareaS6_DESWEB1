@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CalculadoraS6.ViewModel"
+             x:Class="CalculadoraS6.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ViewModelExpresion></local:ViewModelExpresion>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Calculadora de dos numeros " HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <Label Text="Num1:"></Label>
+        <Entry Text="{Binding Num1 }"  Keyboard="Numeric" Placeholder="Ingrese Numero 1"></Entry>
+       
+
+        <Label Text="Num2:"></Label>
+        <Entry Text="{Binding Num2}"  Keyboard="Numeric" Placeholder="Ingrese Numero 2"></Entry>
+
+        <Button Command="{Binding Sumar}" Text="Sumar"/>
+        <Button Command="{Binding Restar}" Text="Restar"/>
+        <Button Command="{Binding Multiplicar}" Text="Multiplicar"/>
+        <Button Command="{Binding Dividir}" Text="Dividir"/>
+
+        <Label Text="{Binding Total}" ></Label>
+    </StackLayout>
+
+</ContentPage>
